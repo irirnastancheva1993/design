@@ -17,3 +17,10 @@ Route::get('/', 'MainController@home');
 Route::get('/about', 'MainController@about');
 Route::get('/review', 'MainController@review')->name('review');
 Route::post('/review/check', 'MainController@review_check');
+Route::get('/search', 'MainController@search')->name('search');
+
+Route::get('/{status}', 'ClothesController@index');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

@@ -2,13 +2,16 @@
 
 namespace App\Http\Controllers;
 
-use App\Contact;
+use App\Review;
+use App\Generic;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\App;
 
 class MainController extends Controller {
 
     public function home() {
-        return view('home');
+        $generics = Generic::all();
+        return view('home', ['generics' => $generics]);
     }
 
     public function about() {
@@ -16,7 +19,7 @@ class MainController extends Controller {
     }
 
     public function review() {
-        $reviews = new Contact();
+        $reviews = new Review();
         return view('review', ['reviews' => $reviews->all()]);
     }
 
@@ -26,7 +29,7 @@ class MainController extends Controller {
             'subject' => 'required|min:4|max:100',
             'message' => 'required|min:15|max:300',
         ]);
-        $review = new Contact();
+        $review = new Review();
         $review->email = $request->input('email');
         $review->subject = $request->input('subject');
         $review->message = $request->input('message');
@@ -34,5 +37,12 @@ class MainController extends Controller {
         $review->save();
 
         return redirect()->route('review');
+    }
+
+    public function search(Request $request) {
+        $search = $request->search;
+//        dd($search);
+        // надо добавить валидацию
+        return view('search');
     }
 }

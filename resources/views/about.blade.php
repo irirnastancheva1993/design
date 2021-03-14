@@ -1,22 +1,11 @@
-@extends('layout')
+@extends('layouts.app')
 
 @section('title')
     О нас
 @endsection
-@section('main_content')
-
-                    <main role="main" class="container inner cover">
-                        <h1 class="cover-heading mt-5">Cover your page.</h1>
-                        <p class="lead">Cover is a one-page template for building simple and beautiful home pages. Download, edit the text, and add your own fullscreen background photo to make it your own.</p>
-                        <p class="lead">
-                            <a href="#" class="btn btn-lg btn-secondary">Learn more</a>
-                        </p>
-                    </main>
-
-
-                    <footer class="footer">
-                        <div class="container">
-                            <span class="text-muted">Place sticky footer content here.</span>
-                        </div>
-                    </footer>
-               @endsection
+@section('content')
+    <div class="container">
+        <h1 class="cover-heading">О нас</h1>
+        <p class="lead">Мы поможем вам в создании выкройки по вашим меркам. Для дополнительной информации звоните по телефону +380679900520.</p>
+    </div>
+@endsection

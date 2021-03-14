@@ -2,10 +2,10 @@
 
 /** @var \Illuminate\Database\Eloquent\Factory $factory */
 
-use App\Contact;
+use App\Review;
 use Faker\Generator as Faker;
 
-$factory->define(Contact::class, function (Faker $faker) {
+$factory->define(Review::class, function (Faker $faker) {
     return [
         'email'=> $faker->email,
         'subject' => $faker->text($maxNbChars = 20),
