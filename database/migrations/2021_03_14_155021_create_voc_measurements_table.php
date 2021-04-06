@@ -15,7 +15,10 @@ class CreateVocMeasurementsTable extends Migration
     {
         Schema::create('voc_measurements', function (Blueprint $table) {
             $table->id();
-            $table->timestamps();
+            $table->string('name');
+            $table->string('abrv_name_ru');
+            $table->string('voc_name_eng');
+            $table->string('description');
         });
     }
 
